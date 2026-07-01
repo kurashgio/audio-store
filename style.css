@@ -90,6 +90,8 @@ main {
   flex: 1;
 }
 
+/* product page*/
+
 .back {
   display: block;
   max-width: 1110px;
@@ -414,7 +416,7 @@ main {
 }
 
 .about-text h2 span {
-  color: #D87D4A;;
+  color: #D87D4A;
 }
 
 .about-text p {
@@ -427,6 +429,263 @@ main {
 .vigac {
   width: 100%;
   border-radius: 8px;
+}
+
+/* home page */
+
+.home-body header {
+  margin: 0 auto;
+  background-color: transparent;
+  max-width: 1110px;
+  padding: 0 24px;
+  height: 95px;
+  border-bottom: 1px solid rgb(91, 91, 91);
+}
+
+.home-black {
+  background-color: rgb(19, 19, 19);
+  margin-bottom: 120px;
+}
+
+.home-top {
+  min-height: 640px;
+  margin-bottom: 0px;
+  background-color: transparent;
+}
+
+.home-top-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 640px;
+  position: relative;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.home-top-text {
+  z-index: 2;
+}
+
+.home-top-text h1 {
+  color: white;
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  max-width: 450px;
+  margin-bottom: 24px;
+}
+
+.new-product {
+  color: rgb(135, 135, 135);
+  letter-spacing: 10px;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.home-top-info {
+  color: rgb(150, 150, 150);
+  font-size: 15px;
+  line-height: 1.67;
+  max-width: 350px;
+  margin-bottom: 40px;
+}
+
+.home-top-img {
+  width: 100%;
+  max-width: 620px;
+}
+
+/**/
+
+.home-featured {
+  display: grid;
+  gap: 48px;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 24px 120px;
+}
+
+.zx9-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 90px;
+  background-color: #D87D4A;
+  min-height: 560px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.zx9-img {
+  width: 100%;
+  max-width: 390px;
+  align-self: end;
+}
+
+.zx9-text h2 {
+  color: white;
+  font-size: 56px;
+  line-height: 1.06;
+  letter-spacing: 2px;
+  max-width: 300px;
+  margin-bottom: 24px;
+}
+
+.zx9-text p {
+  color: white;
+  font-size: 15px;
+  opacity: 0.85;
+  line-height: 1.7;
+  max-width: 350px;
+  margin-bottom: 40px;
+}
+
+.black-btn {
+  width: 160px;
+  height: 48px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+    display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zx7-card {
+  display: flex;
+  align-items: center;
+  padding-left: 95px;
+  min-height: 320px;
+  border-radius: 8px;
+  background-color: rgb(229, 229, 229);
+  background-image: url("assets/weird-speaker.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.zx7-text h2,
+.yx1-text h2 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+
+.outline-btn {
+  width: 160px;
+  height: 48px;
+  border: 1px solid black;
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yx1-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.yx1-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.yx1-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(229, 229, 229);
+  border-radius: 8px;
+  padding-left: 95px;
+}
+
+/* yursasmenebi*/
+
+.h-h1 {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+  padding: 70px 0 95px;
+  margin: 0;
+}
+
+.home-body .home-black {
+  margin-bottom: 0;
+}
+
+.category-products {
+  display: grid;
+  gap: 160px;
+  max-width: 1110px;
+  padding: 160px 24px 120px;
+  margin: 0 auto 100px;
+}
+
+.category-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.category-product-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 560px;
+  background-color: rgb(221, 221, 221);
+  border-radius: 8px;
+}
+
+.category-product-img img {
+  max-width: 75%;
+  max-height: 420px;
+}
+
+.category-product-text {
+  max-width: 445px;
+}
+
+.new-product-p {
+  color: orange;
+  letter-spacing: 10px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.category-product-text h2 {
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  margin-bottom: 32px;
+  }
+
+.category-product-text p {
+  color: rgb(26, 26, 26);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}  
+
+.category-product.marjvniv .category-product-img {
+  order:2;
+}
+
+.category-product.marjvniv .category-product-text {
+  order:1;
 }
 
 /* Footer */
