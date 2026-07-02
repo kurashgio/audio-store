@@ -363,7 +363,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin: 0 auto;
-  padding: 0 24px 160px;
+  padding: 100px 24px 160px;
   max-width: 1110px;
   width: 100%;
 }
@@ -575,7 +575,7 @@ main {
   margin-bottom: 32px;
 }
 
-.outline-btn {
+.weird-btn {
   width: 160px;
   height: 48px;
   border: 1px solid black;
@@ -659,13 +659,6 @@ main {
   max-width: 445px;
 }
 
-.new-product-p {
-  color: orange;
-  letter-spacing: 10px;
-  font-size: 14px;
-  margin-bottom: 16px;
-}
-
 .category-product-text h2 {
   font-size: 40px;
   line-height: 1.1;
@@ -679,6 +672,13 @@ main {
   line-height: 1.7;
   margin-bottom: 40px;
 }  
+
+.new-product-p {
+  color: #D87D4A;
+  letter-spacing: 10px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
 
 .category-product.marjvniv .category-product-img {
   order:2;
@@ -799,7 +799,48 @@ footer p {
 }
 
 .nav-left a:hover {
-  border-bottom: 4px solid darkorange;
+  color:#D87D4A;
+}
+
+.nav-left a:active {
+  color:#D87D4A;
+  opacity: 88%;
+}
+
+.orange-btn:hover {
+  opacity: 90%;
+}
+
+.orange-btn:active {
+  opacity: 80%;
+}
+
+.weird-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.weird-btn:active {
+  background-color: black;
+  color: white;
+  opacity: 85%;
+}
+
+.category-card a:hover {
+  color:#D87D4A;
+}
+
+.category-card a:active {
+  color:#D87D4A;
+  opacity: 80%;
+}
+
+.footer-nav a:hover {
+  color:#D87D4A;
+}
+
+.footer-nav a:active {
+  opacity: 85%;
 }
 
 /* after js */
