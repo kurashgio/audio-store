@@ -5,7 +5,7 @@ const productSlug = params.get("slug") || "xx99-mark-one-headphones";
 
 const imageMap = {
   "xx99-mark-two-headphones": {
-    main: "assets/h2.png",
+    main: "assets/big-h2.png",
     gallery1: "assets/pic3.png",
     gallery2: "assets/pic2.png",
     gallery3: "assets/pic1.png"
@@ -19,31 +19,31 @@ const imageMap = {
   },
 
   "xx59-headphones": {
-    main: "assets/h3.png",
-    gallery1: "assets/pic3.png",
-    gallery2: "assets/pic2.png",
-    gallery3: "assets/pic1.png"
+    main: "assets/big-h3.png",
+    gallery1: "assets/h3-pic3.png",
+    gallery2: "assets/h3-pic2.png",
+    gallery3: "assets/h3-pic1.png"
   },
 
   "zx9-speaker": {
-    main: "assets/s1.png",
-    gallery1: "assets/speaker-gallery-1.png",
-    gallery2: "assets/speaker-gallery-2.png",
-    gallery3: "assets/speaker-gallery-3.png"
+    main: "assets/big-s1.png",
+     gallery1: "assets/s-pic3.png",
+    gallery2: "assets/s-pic2.png",
+    gallery3: "assets/s-pic1.png"
   },
 
   "zx7-speaker": {
-    main: "assets/weird-speaker.png",
-    gallery1: "assets/speaker-gallery-1.png",
-    gallery2: "assets/speaker-gallery-2.png",
-    gallery3: "assets/speaker-gallery-3.png"
+    main: "assets/big-s2.png",
+    gallery1: "assets/s-pic3.png",
+    gallery2: "assets/s2-pic2.png",
+    gallery3: "assets/s2-pic1.png"
   },
 
   "yx1-earphones": {
-    main: "assets/e1.png",
-    gallery1: "assets/earphones-gallery-1.png",
-    gallery2: "assets/earphones-gallery-2.png",
-    gallery3: "assets/earphones-gallery-3.png"
+    main: "assets/big-e1.png",
+        gallery1: "assets/e-pic3.png",
+    gallery2: "assets/e-pic2.png",
+    gallery3: "assets/e-pic1.png"
   }
 };
 

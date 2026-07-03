@@ -9,42 +9,90 @@ const cartBox = document.querySelector(".cart-box");
 const cartInside = document.querySelector(".cart-inside");
 
 let quantity = 0;
-let cart = Number(localStorage.getItem("cartQuantity")) || 0;
+
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+localStorage.removeItem("cartQuantity")
+
+function saveCart() {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+function getProductFromPage() {
+  const name = document.querySelector(".info h2").textContent;
+  const priceText = document.querySelector(".price").textContent;
+  const image = document.querySelector(".main-img").src;
+
+  const price = Number(priceText.replace(/[^0-9]/g, ""));
+
+  return {
+    name: name,
+    price: price,
+    image: image
+  };
+}
 
 function renderCart() {
-  if (cart === 0) {
+  if (cartItems.length === 0) {
     cartInside.textContent = "Your cart is empty";
-  } else {
-    let totalPrice = 1750 * cart;
+    return;
+  }
 
-    cartInside.innerHTML = `
+  let total = 0;
+  let totalQuantity = 0;
+
+  cartItems.forEach(item => {
+    total += item.price * item.quantity;
+    totalQuantity += item.quantity;
+  });
+
+  cartInside.innerHTML = `
+    <div class="cart-top">
+      <h3>CART (${totalQuantity})</h3>
+      <button class="remove-all">Remove all</button>
+    </div>
+
+    ${cartItems.map((item, index) => `
       <div class="cart-item">
-        <img src="assets/h1.png" alt="img" class="small-cart-img">
+        <img src="${item.image}" alt="${item.name}" class="small-cart-img">
 
-        <div class="cart-item-details">   
-          <p class="cart-item-title">XX99 MARK I HEADPHONES</p>
+        <div class="cart-item-details">
+          <p class="cart-item-title">${item.name}</p>
           <p class="cart-item-price">
-            $1,750 x ${cart} <span class="cart-total">$${totalPrice}</span>
+            $${item.price.toLocaleString()} x ${item.quantity}
+            <span class="cart-total">$${(item.price * item.quantity).toLocaleString()}</span>
           </p>
         </div>
 
-        <img src="assets/icon-delete.svg" alt="delete" class="delete-icon">
+        <img src="assets/icon-delete.svg" alt="delete" class="delete-icon" data-index="${index}">
       </div>
+    `).join("")}
 
-      <button class="checkout-btn">Checkout</button>
-    `;
+    <div class="cart-total-row">
+      <span>TOTAL</span>
+      <strong>$${total.toLocaleString()}</strong>
+    </div>
 
-    const cartDelete = document.querySelector(".delete-icon");
+    <a href="checkout.html" class="checkout-btn">Checkout</a>
+  `;
 
-    cartDelete.addEventListener("click", () => {
-      cart = 0;
-      localStorage.removeItem("cartQuantity");
+  document.querySelector(".remove-all").addEventListener("click", () => {
+    cartItems = [];
+    saveCart();
+    renderCart();
+  });
+
+  document.querySelectorAll(".delete-icon").forEach(deleteBtn => {
+    deleteBtn.addEventListener("click", () => {
+      const index = deleteBtn.dataset.index;
+      cartItems.splice(index, 1);
+      saveCart();
       renderCart();
     });
-  }
+  });
 }
-
 renderCart();
+
 
 plus.addEventListener("click", () => {
   quantity++;
@@ -59,12 +107,26 @@ minus.addEventListener("click", () => {
 });
 
 addToCart.addEventListener("click", () => {
-  cart += quantity;
+  if(quantity === 0) {
+    return;
+  }
 
-  localStorage.setItem("cartQuantity", cart);
+  const product = getProductFromPage();
+  const existingItem = cartItems.find(item => item.name === product.name);
 
+  if (existingItem) {
+    existingItem.quantity += quantity;
+  } else {
+    cartItems.push({
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: quantity
+    });
+  }
+
+  saveCart();
   renderCart();
-
   quantity = 0;
   count.textContent = quantity;
 });
